@@ -1,5 +1,8 @@
 class GameController < ApplicationController
 def lets_play
+  moves = ["Rock","Paper","Scissors"]
+
+    @computer_move = moves.sample  
   render("game/play_rock.html.erb")
 end
 
