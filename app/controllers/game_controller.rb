@@ -1,29 +1,30 @@
 class GameController < ApplicationController
 def lets_play
-  render("game/main_page.html.erb")
+  render("game/play_rock.html.erb")
 end
 
 def user_plays_rock
+moves = ["Rock","Paper","Scissors"]
+
+  @computer_move = moves.sample
     render("game/play_rock.html.erb")
 
 end
 
 def user_plays_scissors
-    render("game/play_scissors.html.erb")
+  moves = ["Rock","Paper","Scissors"]
+
+    @computer_move = moves.sample
+
+      render("game/play_scissors.html.erb")
 end
 
 def user_plays_paper
-    render("game/play_paper.html.erb")
-end
+  moves = ["Rock","Paper","Scissors"]
 
-@user_move = "rock"
-@computer_move = ["rock","paper","scissors"].sample
-if @user_move==@computer_move
-  "You tied"
-elsif @computer_move=="paper"
-  "You lose"
-elsif @computer_move=="scissors"
-        "You win"
+    @computer_move = moves.sample
+
+    render("game/play_paper.html.erb")
 end
 
 end

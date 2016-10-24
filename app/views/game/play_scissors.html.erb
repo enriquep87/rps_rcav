@@ -1,6 +1,15 @@
-<h1>Hello!</h1>
+<dt>Your move</dt>
+<img src="http://localhost:3000/assets/images/scissors.png" width="200" />
 
-<p> Your lucky number for today is
-  <%=rand(100) %>
+<dt>Machine move</dt>
 
-</p>
+<% if @computer_move == "Rock" %>
+<img src="http://localhost:3000/assets/images/rock.png" width="200" />
+<h3>You lost!</h3>
+<% elsif @computer_move == "Scissors"%>
+<img src="http://localhost:3000/assets/images/scissors.png" width="200" />
+<h3>You tied!</h3>
+<% else %>
+<img src="http://localhost:3000/assets/images/paper.png" width="200" />
+<h3>You win!</h3>
+  <% end  %>

@@ -1,7 +1,57 @@
-<dt>Your move</dt>
-<dd>Rock</dd>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+          <dt>Your move</dt>
+          <p class="bg-success">Rock</p>
 
-<dt>Machine move</dt>
-<div class="panel-body">
-  <dd><%= @computer_move %></dd>
+          <img src="http://localhost:3000/assets/images/rock.png"
+          width="200"/>
+        </div>
+
+        <div class="col-md-4">
+          <dt>Machine move</dt>
+          <p class="bg-danger">
+          <%= @computer_move %>
+          </p>
+          <% if @computer_move == "Rock" %>
+          <img src="http://localhost:3000/assets/images/rock.png" width="200" />
+
+          <% elsif @computer_move == "Scissors"%>
+          <img src="http://localhost:3000/assets/images/scissors.png" width="200" />
+
+          <% else %>
+          <img src="http://localhost:3000/assets/images/paper.png" width="200" />
+
+            <% end  %>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+          <div class="col-md-offset-4 co-md-4">
+
+
+          <% if @computer_move == "Rock" %>
+          <p>
+          <button type="button" class="btn btn-warning">You tied!</button>
+          </p>
+          <% elsif @computer_move == "Scissors"%>
+
+          <p>
+            <button type="button" class="btn btn-success">You won!</button>
+          </p>
+          <% else %>
+
+          <p>
+          <button type="button" class="btn btn-danger">You lost!</button>
+          </p>
+            <% end  %>
+              </div>
+
+
+    </div>
 </div>
