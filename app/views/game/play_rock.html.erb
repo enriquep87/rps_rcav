@@ -5,25 +5,30 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-4">
           <dt>Your move</dt>
-          <p class="bg-success">Rock</p>
+          <div style="text-align:center;"class="text-success"> <p class="bg-success">Rock</p>
+            </div>
 
-          <img src="http://localhost:3000/assets/images/rock.png"
+          <img src="http://localhost:3000/assets/images/rock.png"class="img-thumbnail"
           width="200"/>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-offset-0.5 col-md-4">
+
           <dt>Machine move</dt>
-          <p class="bg-danger">
+          <div style="text-align:center;"class="text-danger">
+          <p class="bg-danger" >
           <%= @computer_move %>
           </p>
+          </div>
+
           <% if @computer_move == "Rock" %>
-          <img src="http://localhost:3000/assets/images/rock.png" width="200" />
+          <img src="http://localhost:3000/assets/images/rock.png" width="200"class="img-thumbnail" />
 
           <% elsif @computer_move == "Scissors"%>
-          <img src="http://localhost:3000/assets/images/scissors.png" width="200" />
+          <img src="http://localhost:3000/assets/images/scissors.png" width="200"class="img-thumbnail" />
 
           <% else %>
-          <img src="http://localhost:3000/assets/images/paper.png" width="200" />
+          <img src="http://localhost:3000/assets/images/paper.png" width="200"class="img-thumbnail" />
 
             <% end  %>
 
@@ -32,22 +37,21 @@
 
     <div class="row">
 
-          <div class="col-md-offset-4 co-md-4">
-
+          <div class="col-md-offset-4 col-md-4">
 
           <% if @computer_move == "Rock" %>
           <p>
-          <button type="button" class="btn btn-warning">You tied!</button>
+          <button type="button" class="btn btn-warning"> <strong>You tied!</strong></button>
           </p>
           <% elsif @computer_move == "Scissors"%>
 
           <p>
-            <button type="button" class="btn btn-success">You won!</button>
+            <button type="button" class="btn btn-success"><strong>You won!</strong></button>
           </p>
           <% else %>
 
           <p>
-          <button type="button" class="btn btn-danger">You lost!</button>
+          <button type="button" class="btn btn-danger"><strong>You lost!</strong></button>
           </p>
             <% end  %>
               </div>
